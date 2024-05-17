@@ -11,19 +11,34 @@ repositories {
 
 dependencies {
 
-    // Servlet AP
-
+    // Servlet API
     providedCompile 'javax.servlet:javax.servlet-api:4.0.1'
+
+    // Lombok
     compileOnly 'org.projectlombok:lombok:1.18.24'
     annotationProcessor 'org.projectlombok:lombok:1.18.24'
+
+    // MyBatis
     implementation 'org.mybatis:mybatis:3.5.6'
+    implementation 'org.mybatis.spring.boot:mybatis-spring-boot-starter:2.1.4'
+
+    // HikariCP
+    implementation 'com.zaxxer:HikariCP:4.0.3'
+
+    // MySQL Connector
     implementation 'mysql:mysql-connector-java:8.0.28'
+
+    // JSTL
     implementation 'javax.servlet:jstl:1.2'
 
     // Spring API
     implementation 'org.springframework:spring-webmvc:5.3.10'
+    implementation 'org.springframework:spring-jdbc:5.3.10'
+
+    // Jackson Databind
     implementation 'com.fasterxml.jackson.core:jackson-databind:2.13.0'
 
+    // JUnit
     testImplementation platform('org.junit:junit-bom:5.10.0')
     testImplementation 'org.junit.jupiter:junit-jupiter'
 }

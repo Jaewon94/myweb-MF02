@@ -11,14 +11,6 @@
 <body>
 <h1>Hello JSP</h1>
 
-<!-- JSTL 예제 -->
-<c:set var="message" value="Welcome to JSP with JSTL!" />
-<p>${message}</p>
 
-<fmt:formatDate value="${pageContext.request.time}" pattern="yyyy-MM-dd HH:mm:ss" var="currentTime" />
-<p>Current Time: ${currentTime}</p>
-
-<c:set var="str" value="JSP" />
-<p>Length of '${str}': ${fn:length(str)}</p>
 </body>
 </html>
