@@ -3,6 +3,8 @@ package com.example.controller;
 import com.example.entity.Book;
 import com.example.repository.BookMapper;
 import lombok.RequiredArgsConstructor;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -18,17 +20,17 @@ public class SpringRestController {
     private final BookMapper bookMapper;
 
     @RequestMapping("/restList")
-    public List<Book> rest() {
+    public ResponseEntity<?> rest() {
         List<Book> list = bookMapper.bookList();
-        return list;
+        return new ResponseEntity<>(list, HttpStatus.ACCEPTED);
     }
 
     @PostMapping("/restSave")
-    public String saveBook(@RequestBody Book book) {
+    public ResponseEntity<?> saveBook(@RequestBody Book book) {
 
         bookMapper.saveBook(book);
 
-        return "success";
+        return new ResponseEntity<>("success",HttpStatus.CREATED);
     }
 
 }

@@ -2,6 +2,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <c:set var="cpath" value="${pageContext.request.contextPath}" />
 <!DOCTYPE html>
 <html lang="en">
@@ -58,7 +59,7 @@
                                         <c:forEach var="book" items="${list}">
                                             <tr>
                                                 <td>${book.num}</td>
-                                                <td>${book.title}</td>
+                                                <td><a href="${cpath}/get/${book.num}">${book.title}</a></td>
                                                 <td>${book.price}</td>
                                                 <td>${book.author}</td>
                                                 <td>${book.page}</td>
@@ -67,6 +68,7 @@
                                         </c:forEach>
                                     </tbody>
                                 </table>
+                                <button class="btn btn-sm btn-success" onclick="location.href='${cpath}/register'">등록</button>
 
                             </div>
                         </div>

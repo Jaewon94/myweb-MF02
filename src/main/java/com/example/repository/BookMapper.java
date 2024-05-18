@@ -11,4 +11,12 @@ public interface BookMapper {
     public List<Book> bookList();
 
     public void saveBook(Book book);
+
+    public void registerBook(Book book);
+
+    public Book get(int num);
+
+    public void remove(int num);
+
+    public void update(Book book);
 }
